@@ -12,36 +12,43 @@ namespace TRMDesktopUI.ViewModels
         private string _userName;
         private string _password;
 
-        public string userName
+        public string UserName
         {
             get { return _userName; }
             set
             {
                 _userName = value;
-                NotifyOfPropertyChange(() => userName);
+                NotifyOfPropertyChange(() => UserName);
+                NotifyOfPropertyChange(() => CanLogIn);
             }
         }
-       
+
 
         public string Password
         {
             get { return _password; }
-            set {
+            set
+            {
                 _password = value;
                 NotifyOfPropertyChange(() => Password);
+                NotifyOfPropertyChange(() => CanLogIn);
+
             }
         }
 
-        public bool CanLogIn(string userName, string password)
+        public bool CanLogIn
         {
-            bool output = false;
-
-            if (userName.Length > 0 && password.Length > 0)
+            get
             {
-                output = true;
+                bool output = false;
+                if (UserName?.Length > 0 && Password?.Length > 0)
+                {
+                    output = true;
+                }
+                return output;
             }
-            return output;
         }
+
 
         public void LogIn(string userName, string password)
         {
@@ -50,3 +57,5 @@ namespace TRMDesktopUI.ViewModels
 
     }
 }
+
+
