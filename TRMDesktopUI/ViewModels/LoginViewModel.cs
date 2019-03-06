@@ -50,7 +50,7 @@ namespace TRMDesktopUI.ViewModels
         }
 
 
-        public void LogIn(string userName, string password)
+        public void LogIn()
         {
             Console.WriteLine();
         }
