@@ -16,7 +16,7 @@ namespace TRMDataManager.Controllers
     public class UserController : ApiController
     {
 
-
+        [HttpGet]
         // GET: User/Details/5
         public UserModel GetById()
         {

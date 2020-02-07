@@ -99,7 +99,7 @@ namespace TRMDesktopUI.ViewModels
                 var result = await _apiHelper.Authenticate(UserName, Password);
 
                 // Capture more info abou the user
-
+                await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
             }
             catch (Exception ex)
             {
