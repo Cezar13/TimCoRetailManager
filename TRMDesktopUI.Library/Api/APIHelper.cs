@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using TRMDesktopUI.Library.Models;
 using TRMDesktopUI.Models;
@@ -63,7 +61,7 @@ namespace TRMDesktopUI.Library.Api
 
             using (HttpResponseMessage response = await apiClient.GetAsync("/api/User"))
             {
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsAsync<LoggedInUserModel>();
                     _loggedInUser.CreatedDate = result.CreatedDate;
@@ -72,7 +70,7 @@ namespace TRMDesktopUI.Library.Api
                     _loggedInUser.Id = result.Id;
                     _loggedInUser.LastName = result.LastName;
                     _loggedInUser.Token = token;
-                    
+
                 }
                 else
                 {

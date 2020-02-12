@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using TRMDesktopUI.Helpers;
@@ -16,7 +14,7 @@ namespace TRMDesktopUI
     class Bootstrapper : BootstrapperBase
     {
 
-        private SimpleContainer _container = new SimpleContainer(); 
+        private SimpleContainer _container = new SimpleContainer();
 
         public Bootstrapper()
         {
@@ -32,7 +30,7 @@ namespace TRMDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<ILoggedInUserModel,LoggedInUserModel>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
 
             GetType().Assembly.GetTypes()

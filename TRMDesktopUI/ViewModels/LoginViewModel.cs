@@ -1,10 +1,6 @@
 ﻿using Caliburn.Micro;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using TRMDesktopUI.Helpers;
 using TRMDesktopUI.Library.Api;
 
 namespace TRMDesktopUI.ViewModels
@@ -57,8 +53,8 @@ namespace TRMDesktopUI.ViewModels
                 }
                 return output;
             }
-           
-            
+
+
         }
 
 
@@ -72,7 +68,7 @@ namespace TRMDesktopUI.ViewModels
                 _errorMessage = value;
                 NotifyOfPropertyChange(() => IsErrorVisible);
                 NotifyOfPropertyChange(() => ErrorMessage);
-               
+
             }
         }
 
